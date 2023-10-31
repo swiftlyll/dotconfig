@@ -11,6 +11,16 @@
 /***Preferences ***/
 /* Enables browsing from the URL bar.***/
 user_pref("keyword.enabled", true);
+/* 2811: set/enforce what items to clear on shutdown (if 2810 is true) [SETUP-CHROME]
+ * [NOTE] If "history" is true, downloads will also be cleared
+ * [NOTE] "sessions": Active Logins: refers to HTTP Basic Authentication [1], not logins via cookies
+ * [1] https://en.wikipedia.org/wiki/Basic_access_authentication ***/
+    //user_pref("privacy.clearOnShutdown.cache", true);     // [DEFAULT: true]
+    //user_pref("privacy.clearOnShutdown.downloads", true); // [DEFAULT: true]
+    //user_pref("privacy.clearOnShutdown.formdata", true);  // [DEFAULT: true]
+    //user_pref("privacy.clearOnShutdown.history", true);   // [DEFAULT: true]
+    //user_pref("privacy.clearOnShutdown.sessions", true);  // [DEFAULT: true]
+user_pref("privacy.clearOnShutdown.siteSettings", false); // [DEFAULT: false]
 /* 4504: enable RFP letterboxing [FF67+] 
  * Removes RFP margin but keeps everything else.***/
 user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
@@ -22,8 +32,12 @@ user_pref("privacy.resistFingerprinting.letterboxing", false); // [HIDDEN PREF]
 user_pref("signon.rememberSignons", false);
 /* 5004: disable permissions manager from writing to disk [FF41+] [RESTART]
  * [NOTE] This means any permission changes are session only
- * [1] https://bugzilla.mozilla.org/967812 ***/
-user_pref("permissions.memory_only", true); // [HIDDEN PREF]
+ * [1] https://bugzilla.mozilla.org/967812 
+ * This conflicts with site exceptions, only use if you don't want or plan on using saved logins. ***/
+    // user_pref("permissions.memory_only", true); // [HIDDEN PREF]
+/* 5008: disable resuming session from crash
+ * [TEST] about:crashparent ***/
+user_pref("browser.sessionstore.resume_from_crash", false);
 /* 5009: disable "open with" in download dialog [FF50+]
  * Application data isolation [1]
  * [1] https://bugzilla.mozilla.org/1281959 ***/
