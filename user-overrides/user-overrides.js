@@ -33,7 +33,7 @@ user_pref("signon.rememberSignons", false);
 /* 5004: disable permissions manager from writing to disk [FF41+] [RESTART]
  * [NOTE] This means any permission changes are session only
  * [1] https://bugzilla.mozilla.org/967812 
- * This conflicts with site exceptions, only use if you don't want or plan on using saved logins. ***/
+ * [NOTE] This conflicts with site exceptions, only use if you don't want or plan on using saved logins. ***/
     // user_pref("permissions.memory_only", true); // [HIDDEN PREF]
 /* 5008: disable resuming session from crash
  * [TEST] about:crashparent ***/
