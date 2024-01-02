@@ -1,6 +1,6 @@
 /*****
  * 
- * Name: KM
+ * Name: Kennet Morales
  * Date: 27 October 2023
  * Source: https://github.com/arkenfox/user.js
  * Licence: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
